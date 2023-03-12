@@ -1,7 +1,7 @@
 const createPerson = (name, age) => {
   return person = {
-    name:name,
-    age:age,
+    name: name,
+    age: age,
   };
 };
 
@@ -23,7 +23,7 @@ const hasProperty = (property, object) => {
 
 const isOver65 = person => {
   if (person.age > 65) {
-    return true; 
+    return true;
   } else {
     return false;
   }
@@ -32,42 +32,32 @@ const isOver65 = person => {
 const getAges = people => {
   let arrAges = []
   for (let i = 0; i < people.length; i++) {
-      arrAges.push(people[i].age);
-    };
+    arrAges.push(people[i].age);
+  };
   return arrAges;
-  }; 
+};
 
 const findByName = (name, people) => {
-  for (let i = 0; i < people.length; i++) {
-    if (people[i].name == name) {
-      return people[i];
-    };
-  };
+  return people.filter(person => person.name === name)[0];
 };
 
 const findHondas = cars => {
-  let hondaCars = []
-  for (let i = 0; i < cars.length; i++) {
-    if (cars[i].manufacturer == 'Honda') {
-      hondaCars.push(cars[i]);
-    };
-  };
-  return hondaCars;
+  return cars.filter(car => car.manufacturer === 'Honda');
 };
 
 const averageAge = people => {
-  return people.reduce((acc,a) => a.age + acc,0)/people.length;
+  return people.reduce((acc, a) => a.age + acc, 0) / people.length;
 };
 
 const createTalkingPerson = (name, age) => {
- const person = {
+    const person = {
     name,
     age,
-    introduce: function introduction(name){
-      return 'Hi ' + name + ', my name is ' + this.name + ' and I am ' + this.age + '!';
+    introduce: stranger => {
+      return `Hi ${stranger}, my name is ${person.name} and I am ${person.age}!`;
     }
   };
-   return person;
+  return person;
 };
 
 module.exports = {

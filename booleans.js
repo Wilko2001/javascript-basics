@@ -3,11 +3,7 @@ function negate(a) {
 };
 
 function both(a, b) {
-  if (a == true && b == true) {
-    return true;
-  } else {
-    return false;
-  };
+  return (a && b);
 
 };
 
